@@ -12,12 +12,14 @@
     <body>
         <form id="myForm" onsubmit="return false">
             <legend>Welcome to the AristoFact Maker!</legend>
+            <br>
             <label for="headerInput">Enter the text for the fact header:</label>
-            <input type="text" id="headerInput" name="headerInput"/>
+            <input type="text" placeholder="YOU KNOW THAT?" id="headerInput" maxlength="30" name="headerInput"/>
             <br>
             <label for="factInput">Enter the text for the body of the fact:</label>
-            <textarea id="factInput" rows="5" cols="30" name="factInput"></textarea>
+            <textarea id="factInput" placeholder="Your fact text goes here" rows="5" cols="30" name="factInput"></textarea>
             <br>
+            
             <label for="factType">Choose a fact type:</label>
             <select id="factType" name="factType">
                 <option value="news">Breaking News</option>
@@ -30,16 +32,16 @@
                 <option value="language">Language Fact</option>
             </select>
             <br>
-            <label for="img">Select an image:</label>
+            <label for="img">Upload an image:</label>
             <input type="file" id="img" name="img" accept="image/*"  onchange="onFileSelected(event)">
             <br>
             <button onclick="process(this)">Submit</button>
         </form>
 
 
-        <div class="complete-fact" id="finalFact">
+        <div class="complete-fact hidden" id="finalFact">
             <div class="image">
-                <img id="image" src="TMWframes1.jpg"/>
+                <img id="image" src=""/>
             </div>
             <div class="divider" id="divider">
                 <div class="mid-bar" id="midbar">
