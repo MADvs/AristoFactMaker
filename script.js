@@ -6,18 +6,26 @@ const factText = document.getElementById('factText');
 const factBox = document.getElementById('textBox')
 const typeText = document.getElementById('typeText');
 const factHeader = document.getElementById('header');
+const myForm = document.getElementById('myForm');
 
 function process(element) {
     const form = element.closest('form');
     headerText.innerHTML = form[0].value;
     factText.innerHTML = form[1].value;
     finalFact.style.display = "flex";
-    let currentSize;
+    let currentSize1;
+    let currentSize2;
     let step = 0.5;
 
-    while (factBox.offsetWidth < factText.offsetWidth) {
-        currentSize = parseFloat(window.getComputedStyle(wrap, null).getPropertyValue('font-size'));
-          factText.style.fontSize = (currentSize - step) + "px";
+    while (factHeader.offsetHeight < headerText.offsetHeight) {
+        currentSize1 = parseFloat(window.getComputedStyle(headerText, null).getPropertyValue('font-size'));
+          factHeader.style.fontSize = (currentSize1 - step) + "px";
+    }
+
+    //Auto-resize fact body font size
+    while (factBox.offsetHeight < factText.offsetHeight) {
+        currentSize2 = parseFloat(window.getComputedStyle(factText, null).getPropertyValue('font-size'));
+          factBox.style.fontSize = (currentSize2 - step) + "px";
     }
 
     //Switch statement styles the frame dependent on fact type//
@@ -79,6 +87,8 @@ function process(element) {
             typeText.innerHTML = "Language Fact";
             break;
     }
+    finalFact.classList.remove('hidden');
+    myForm.classList.add('hidden');
 }
 
 function onFileSelected(event) {
