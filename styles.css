@@ -17,6 +17,15 @@
     --lightteal: #B2EDF5;
 }
 
+r {color: var(--red);}
+b {color: var(--blue);}
+y {color: var(--yellow);}
+g {color: var(--green);}
+e {color: var(--purple);}
+k {color: var(--pink);}
+o {color: var(--orange);}
+
+
 body {
     background-color: #2f2f2f;
     font-family: "Acme", sans-serif;
@@ -26,12 +35,41 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
+    align-items: center;
     padding: 20px;
+    font-size: 20px;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin: auto;
     legend {
         font-size: 24px;
         margin: 10px;
+        text-align: center;
     }
+    label {margin: 5px;}
+    button {
+        width: 100px;
+        padding: 5px;
+        font-family: "Acme", sans-serif;
+        font-size: 24px;
+    }
+    #img {
+        margin-right: -60px;
+    }
+}
+
+.box {border: 1px solid white;}
+
+.italic {
+    font-size: 14px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1px;
+    text-align: center;
+}
+
+a {
+    color: var(--blue);
 }
 
 .complete-fact {
@@ -41,6 +79,7 @@ form {
     border: 10px solid red;
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 
 .image {
@@ -64,7 +103,7 @@ form {
     width: 200px;
     background-color: red;
     color: black;
-    font-size: 12px; 
+    font-size: 16px; 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -84,26 +123,28 @@ form {
     border-radius: 8px;
     width: 350px;
     height: 50px;
+    color: black;
+    text-align: center;
     p {
         margin: 5px;
-        color: black;
-        max-width: 100%;
-        white-space: nowrap;
     }
 }
 
-.text-box {
+#textBox {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 150px;
     width: 375px;
-    border: 1px solid red;
     margin: auto;
     font-size: 54px;
     text-align: center;
     p {
-        margin: 0px 0px 0px 0px;
+        margin: 0px;
     }
+}
+
+.hidden {display: none;}
+  
 }
   
